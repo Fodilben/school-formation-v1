@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>École de formation</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <nav id="nav-container"></nav>
+    <main id="main">
+      <button id="openbtn" onclick="openNav()">></button>
+      <header id="header-container"></header>
+      <section class="main-section">
+        <h2>Bienvenue à l'école de formation</h2>
+        <p>Description de l'école de formation...</p>
+
+        <div class="main-content">
+          <section class="formations">
+            <h3>Nos formations</h3>
+            <div class="container">
+              <div class="formation">
+                <img src="assets/marketing.png" alt="marketing" />
+                <div class="formation-info">
+                  <h4>Formation 1</h4>
+                  <p>Description de la formation 1...</p>
+                  <a href="./formations/marketing.html">En savoir plus</a>
+                </div>
+              </div>
+              <div class="formation">
+                <img src="assets/informtic.jpeg" alt="informtic" />
+                <div class="formation-info">
+                  <h4>Formation 2</h4>
+                  <p>Description de la formation 2...</p>
+                  <a href="./formations/informatics.html">En savoir plus</a>
+                </div>
+              </div>
+              <div class="formation">
+                <img src="assets/management.jpeg" alt="management" />
+                <div class="formation-info">
+                  <h4>Formation 3</h4>
+                  <p>Description de la formation 3...</p>
+                  <a href="formations/managements.html">En savoir plus</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="promotions">
+            <h3>Promotions</h3>
+            <marquee behavior="scroll" direction="up">
+              <p>Promotion 1</p>
+              <p>Promotion 2</p>
+              <p>Promotion 3</p>
+            </marquee>
+          </aside>
+        </div>
+      </section>
+      <section class="comments-section">
+        <h2>Commentaires</h2>
+
+        <h3>Laissez un commentaire</h3>
+        <form id="commentForm" method="post">
+          <input
+            type="email"
+            id="email"
+            placeholder="Votre adresse e-mail"
+            required
+          /><br />
+          <textarea
+            id="comment"
+            placeholder="Votre commentaire"
+            required
+          ></textarea
+          ><br />
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comments-area">ff</div>
+      </section>
+    </main>
+    <script src="./js//OpenCloseNav.js"></script>
+    <script src="js /comments.js"></script>
+    <script src="js/loadComments.js"></script>
+    <script src="./js/fetchHeader.js"></script>
+  </body>
+</html>
