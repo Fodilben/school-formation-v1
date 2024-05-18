@@ -6,13 +6,6 @@ body {
   display: flex;
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  height: fit-content;
-}
 a {
   text-decoration: none;
 }
@@ -23,173 +16,11 @@ a {
 h1 {
   margin: 0;
 }
-nav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 30px;
-}
-/* nav {
-  height: 100vh;
-  width: 25%;
-  padding: 10px;
-} */
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333;
-  overflow: hidden;
-}
 
-nav li {
-  float: left;
-}
-
-nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-nav li a:hover {
-  background-color: #111;
-}
-#closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-  background-color: transparent;
-  border: none;
-}
-
-#openbtn {
-  font-size: 20px;
-  position: absolute;
-  cursor: pointer;
-  background: transparent;
-  color: white;
-  border: none;
-  top: 10px;
-  left: 10px;
-  padding: 10px;
-  background-color: transparent;
-  border: none;
-}
 main {
   width: 100%;
 }
-.main-section {
-  padding: 20px;
-}
-.main-content {
-  display: flex;
-  gap: 2rem;
-  justify-content: space-evenly;
-}
 
-.formations .container {
-  display: flex;
-  min-width: 400px;
-
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.formation {
-  min-width: 100%;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-
-.formation img {
-  width: 100%;
-  height: auto;
-}
-
-.formation-info {
-  padding: 10px;
-}
-
-.promotions {
-  width: 30%;
-  margin-top: 60px;
-  max-width: 40%;
-
-  max-height: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-}
-
-.comments-section {
-  background-color: #f9f9f9;
-  padding: 20px;
-}
-
-.comments-section h2 {
-  color: #333;
-}
-
-.comments-section form {
-  margin-top: 20px;
-}
-
-.comments-section form input[type="email"],
-.comments-section form textarea {
-  padding: 10px;
-  width: 100%;
-  padding-right: 0;
-  margin-bottom: 10px;
-}
-
-.comments-section form button {
-  background-color: #333;
-  color: #fff;
-
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.comments-section form button:hover {
-  background-color: #111;
-}
 .toggle {
   width: 20px;
-}
-.border {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 10px;
-  width: 90%;
-  border-bottom: solid 2px #111;
-}
-.personel-info {
-  /* box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px; */
-  padding: 10px 20px;
-}
-.personel-info > div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-.personel-info img {
-  width: 25px;
-  height: 25px;
-}
-.links {
-  /* box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px; */
-  padding: 20px;
 }

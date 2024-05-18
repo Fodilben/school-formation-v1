@@ -10,12 +10,13 @@ function loadComments() {
       if (comments.length > 0) {
         var html = "<h2>Commentaires</h2>";
         for (var i = 0; i < comments.length; i++) {
-          html +=
-            "<p><strong>" +
+          html += `<div><img src="assets/profile-icon-comments.png" >`;
+          "<span><h5>" +
             comments[i].email +
-            ":</strong> " +
+            ":</h5> " +
+            "<p>" +
             comments[i].COMMENT +
-            "</p>";
+            "</p> </span> </div>";
         }
         commentsContainer.innerHTML = html;
       } else {
