@@ -1,7 +1,7 @@
 const commentsContainer = document.getElementById("comments-area");
 
 function loadComments() {
-  fetch("http://localhost/first-try/php/comments.php")
+  fetch("http://localhost/second-try/php/comments.php")
     .then((response) => response.json()) // Parse response as JSON
     .then((res) => {
       let comments = res.comments;
