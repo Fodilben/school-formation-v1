@@ -1,38 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var commentForm = document.getElementById("commentForm");
+  const commentForm = document.getElementById("commentForm");
 
   // Event listener for the comment form submission
   commentForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    var email = document.getElementById("email").value;
-    var comment = document.getElementById("comment").value;
+    const emailInput = document.getElementById("email").value;
+    const commentInput = document.getElementById("comment").value;
 
-    if (email && comment) {
+    if (emailInput && commentInput) {
       fetch("http://localhost/school-formation-v1/php/comments.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body:
-          "email=" +
-          encodeURIComponent(email) +
-          "&comment=" +
-          encodeURIComponent(comment),
+        body: `email=${encodeURIComponent(
+          emailInput
+        )}&comment=${encodeURIComponent(commentInput)}`,
       })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
+        .then((response) => response.json())
+        .then((data) => {
           if (data.status === "success") {
             console.log(data.message);
             window.location.reload();
-            // If you want to do something after adding the comment, you can do it here
+            // Any additional actions after submitting the comment can be added here
           } else {
             console.error(data.message);
           }
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.error("Error submitting comment:", error);
         });
     }
