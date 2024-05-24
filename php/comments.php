@@ -1,6 +1,8 @@
 <?php
 include('database.php');
 
+$response = ["status" => "error", "message" => "Invalid request"];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $comment = $_POST['comment'];
@@ -9,26 +11,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare("INSERT INTO comments (email, comment) VALUES (?, ?)");
         $stmt->bind_param("ss", $email, $comment);
         if ($stmt->execute()) {
-            echo json_encode(["status" => "success", "message" => "Comment added successfully!"]);
+            $response = ["status" => "success", "message" => "Comment added successfully!"];
         } else {
-            echo json_encode(["status" => "error", "message" => "Error adding comment: " . $stmt->error]);
+            $response["message"] = "Error adding comment: " . $stmt->error;
         }
         $stmt->close();
     } else {
-        echo json_encode(["status" => "error", "message" => "Invalid email format!"]);
+        $response["message"] = "Invalid email format!";
     }
-} else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+} elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $result = $conn->query("SELECT * FROM comments");
     $comments = [];
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $comments[] = $row;
         }
-        echo json_encode(["status" => "success", "comments" => $comments]);
+        $response = ["status" => "success", "comments" => $comments];
     } else {
-        echo json_encode(["status" => "success", "message" => "No comments found!"]);
+        $response = ["status" => "success", "message" => "No comments found!"];
     }
 }
 
+echo json_encode($response);
 $conn->close();
 ?>
