@@ -1,33 +1,50 @@
+// Get the container element where comments will be displayed
 const commentsContainer = document.getElementById("comments-area");
 
-function loadComments() {
+// Function to load comments from the server
+function getComments() {
+  // Fetch comments from the specified URL
   fetch("http://localhost/school-formation-v1/php/comments.php")
-    .then((response) => response.json()) // Parse response as JSON
+    .then((response) => response.json()) // Parse the response as JSON
     .then((res) => {
-      let comments = res.comments;
-      console.log(comments);
-      commentsContainer.innerHTML = "";
-      if (comments.length > 0) {
-        var html = "<h2>Commentaires</h2>";
-        for (var i = 0; i < comments.length; i++) {
-          html += `<div><img src="assets/profile-icon-comments.png" >`;
-          "<span><h5>" +
-            comments[i].email +
-            ":</h5> " +
-            "<p>" +
-            comments[i].COMMENT +
-            "</p> </span> </div>";
+      if (res.status === "success") {
+        // Check if the response status is "success"
+        let comments = res.comments; // Get the comments from the response
+        console.log(comments); // Log comments to the console for debugging
+        commentsContainer.innerHTML = ""; // Clear the comments container
+
+        if (typeof comments == "object") {
+          // Check if comments is an object (array)
+          var html = "<h2>Commentaires</h2>"; // Initialize HTML string with a header
+
+          // Loop through each comment and build the HTML
+          for (var i = comments.length - 1; i > 0; i--) {
+            html += `<div>
+            <span>
+              <div>
+                <img src="assets/profile-icon-comments.png" alt="" />
+                <h5>${comments[i].email}</h5>
+              </div>
+              <p>
+              ${comments[i].COMMENT}
+              </p>
+            </span>
+          </div>`;
+          }
+
+          // Set the built HTML to the comments container
+          commentsContainer.innerHTML = html;
+        } else {
+          // If no comments are available, display a placeholder message
+          commentsContainer.innerHTML =
+            "<p>Aucun commentaire pour le moment.</p>";
         }
-        commentsContainer.innerHTML = html;
-      } else {
-        commentsContainer.innerHTML =
-          "<p>Aucun commentaire pour le moment.</p>";
       }
     })
     .catch((error) => {
-      console.error("Error loading comments:");
+      console.error("Error loading comments:"); // Log any errors that occur during fetch
     });
 }
 
-// Call the loadComments function on page load
-window.addEventListener("load", loadComments);
+// Call the loadComments function when the page loads
+window.addEventListener("load", getComments);

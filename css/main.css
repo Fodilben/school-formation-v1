@@ -280,6 +280,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+  margin: 5px 0px;
 }
 #comments-area div img {
   width: 50px;
