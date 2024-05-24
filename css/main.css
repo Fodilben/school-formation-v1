@@ -43,10 +43,10 @@ h3 {
   width: 100%;
   overflow: hidden;
 }
-.hero .hero-background {
+.hero .hero-img {
   filter: brightness(0.6);
 }
-.hero .hero-background img {
+.hero .hero-img img {
   width: 100%;
 }
 
@@ -182,40 +182,40 @@ h3 {
 /* =======-promotion-======== */
 /* ========================== */
 
-.main-section .promotions {
+.main-section .promo {
   display: flex;
   flex-direction: column;
   gap: 100px;
 }
-.main-section .promotions .container {
+.main-section .promo .container {
   display: flex;
   flex-direction: column;
   gap: 80px;
 }
-.main-section .promotions .promotion {
+.main-section .promo .promotion {
   display: flex;
   height: fit-content;
   gap: 20px;
 }
-.main-section .promotions .promotion img {
+.main-section .promo .promotion img {
   border-radius: 8px;
   overflow: hidden;
   width: 150px;
   height: 150px;
 }
 
-.main-section .promotions .promotion .promotion-info {
+.main-section .promo .promotion .promotion-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.main-section .promotions .promotion .promotion-info h4 {
+.main-section .promo .promotion .promotion-info h4 {
   font-size: 23px;
   width: 200px;
 }
-.main-section .promotions .promotion .promotion-info p {
+.main-section .promo .promotion .promotion-info p {
   color: #666666;
   width: 80%;
 }
@@ -275,7 +275,7 @@ textarea {
   flex-direction: column;
   margin-top: 50px;
 }
-#comments-area div {
+#comments-area > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -292,6 +292,7 @@ textarea {
   padding: 20px;
   border-radius: 8px;
   gap: 20px;
+  width: 100%;
 }
 
 /* ========================== */
