@@ -1,20 +1,15 @@
 const headerContainer = document.getElementById("header-container");
-const navbarContainer = document.getElementById("nav-container");
+const navContainer = document.getElementById("nav-container");
 
-fetch("./header.html")
-  .then((response) => response.text())
-  .then((html) => {
-    headerContainer.innerHTML = html;
-  })
-  .catch((error) => {
-    console.error("Error loading navbar:", error);
-  });
+async function loadHTML(filePath, container) {
+  try {
+    const response = await fetch(filePath);
+    const html = await response.text();
+    container.innerHTML = html;
+  } catch (error) {
+    console.error(`Error loading ${filePath}:`, error);
+  }
+}
 
-fetch("./sideBar.html")
-  .then((response) => response.text())
-  .then((html) => {
-    navbarContainer.innerHTML = html;
-  })
-  .catch((error) => {
-    console.error("Error loading navbar:", error);
-  });
+loadHTML("./header.html", headerContainer);
+loadHTML("./sideBar.html", navContainer);

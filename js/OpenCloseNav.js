@@ -1,11 +1,19 @@
 function openNav() {
-  document.getElementById("nav-container").style.width = "300px";
-  document.getElementById("openbtn").style.display = "none";
-  document.getElementById("closebtn").style.display = "block";
+  const navContainer = document.getElementById("nav-container");
+  const openButton = document.getElementById("openbtn");
+  const closeButton = document.getElementById("closebtn");
+
+  navContainer.style.width = "300px";
+  openButton.style.display = "none";
+  closeButton.style.display = "block";
 }
 
 function closeNav() {
-  document.getElementById("nav-container").style.width = "0";
-  document.getElementById("openbtn").style.display = "block";
-  document.getElementById("closebtn").style.display = "none";
+  const navContainer = document.getElementById("nav-container");
+  const openButton = document.getElementById("openbtn");
+  const closeButton = document.getElementById("closebtn");
+
+  navContainer.style.width = "0";
+  openButton.style.display = "block";
+  closeButton.style.display = "none";
 }
