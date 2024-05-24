@@ -10,7 +10,7 @@ fetch("./header.html")
     console.error("Error loading navbar:", error);
   });
 
-fetch("./nav.html")
+fetch("./sideBar.html")
   .then((response) => response.text())
   .then((html) => {
     navbarContainer.innerHTML = html;

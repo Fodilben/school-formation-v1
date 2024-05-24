@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var comment = document.getElementById("comment").value;
 
     if (email && comment) {
-      fetch("http://localhost/second-try/php/comments.php", {
+      fetch("http://localhost/school-formation-v1/php/comments.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
