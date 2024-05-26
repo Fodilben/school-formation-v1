@@ -49,3 +49,16 @@ nav ul li {
 .hero p {
   padding-top: 10px;
 } */
+
+span {
+  width: 167px;
+  height: 74px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  align-content: center;
+  gap: 26;
+  position: absolute;
+}
