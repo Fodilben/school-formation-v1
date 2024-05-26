@@ -25,7 +25,7 @@ async function fetchComments() {
           commentsHTML += `<div>
             <span>
               <div>
-                <img src="./assets/profile-icon-comments.png" alt="Profile Icon" />
+                <img src="./imgs/profile-icon-comments.png" alt="Profile Icon" />
                 <h5>${comment.email}</h5>
               </div>
               <p>${comment.COMMENT}</p>
